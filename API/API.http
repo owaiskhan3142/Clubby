@@ -3,4 +3,9 @@
 GET {{API_HostAddress}}/weatherforecast/
 Accept: application/json
 
+
+POST {{API_HostAddress}}/api/account/register
+Accept: application/json
+
+
 ###
