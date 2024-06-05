@@ -11,7 +11,6 @@ namespace API.Controllers
     public class AccountController : BaseApiController
     {
         private readonly DataContext _context;
-
         public AccountController(DataContext context)
         {
             _context = context;
@@ -33,7 +32,6 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return user;
         }
-
         [HttpPost("login")]
         public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
         {
