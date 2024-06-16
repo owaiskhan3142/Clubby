@@ -12,7 +12,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto" *ngIf="loggedIn">
       <li class="nav-item active">
         <a class="nav-link" href="#"
@@ -30,14 +30,17 @@
       </li>
     </ul>
 
-    <div class="dropdown">
-      <a href="" class="dropdown-toggle text-light">Welcome User</a>
-      <div class="dropdown-menu">
+    <div class="dropdown" *ngIf="loggedIn" dropdown>
+      <a
+        href="#"
+        class="dropdown-toggle text-light text-decoration-none"
+        dropdownToggle
+        >Welcome User</a
+      >
+      <div class="dropdown-menu" *dropdownMenu>
         <a href="" class="dropdown-item">Edit Profile</a>
         <a href="" class="dropdown-item" (click)="logout()">Logout</a>
-
       </div>
-
     </div>
     <form
       #loginForm="ngForm"
