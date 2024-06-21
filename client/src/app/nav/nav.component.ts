@@ -8,24 +8,33 @@ import { AccountService } from '../_services/account.service';
 })
 export class NavComponent implements OnInit {
 
-  model : any = {};
+  model: any = {};
   loggedIn = false;
 
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService) { }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getCurrentUser();
   }
 
-  login(){
-    this.accountService.login(this.model).subscribe({next:response=>{
-      console.log(response);
-      this.loggedIn=true;
-    },
-    error: error => console.log(error)
-  })
+  getCurrentUser() {
+    this.accountService.currentUser$.subscribe({
+      next: user => this.loggedIn = !!user,
+      error: error => console.log(error)
+    })
   }
 
-  logout(){
+  login() {
+    this.accountService.login(this.model).subscribe({
+      next: response => {
+        console.log(response);
+        this.loggedIn = true;
+      },
+      error: error => console.log(error)
+    })
+  }
+
+  logout() {
+    this.accountService.logout();
     this.loggedIn = false;
   }
 
