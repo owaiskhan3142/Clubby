@@ -13,7 +13,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto" *ngIf="loggedIn">
+    <ul class="navbar-nav mr-auto" *ngIf="accountService.currentUser$ | async">
       <li class="nav-item active">
         <a class="nav-link" href="#"
           >Matches <span class="sr-only">(current)</span></a
@@ -30,7 +30,7 @@
       </li>
     </ul>
 
-    <div class="dropdown" *ngIf="loggedIn" dropdown>
+    <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
       <a
         href="#"
         class="dropdown-toggle text-light text-decoration-none"
@@ -47,7 +47,7 @@
       class="d-flex"
       (ngSubmit)="login()"
       autocomplete="off"
-      *ngIf="!loggedIn"
+      *ngIf="!(accountService.currentUser$ | async)"
     >
       <input
         name="username"
