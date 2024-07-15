@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
   @Output() cancelRegistration = new EventEmitter();
   model: any = {};
 
-  constructor(private accountService: AccountService,  private tostr: ToastrService) {
+  constructor(private accountService: AccountService, private tostr: ToastrService) {
 
   }
 

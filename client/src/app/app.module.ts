@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +15,7 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './_module/shared.module';
 
 @NgModule({
   declarations: [
@@ -33,10 +34,9 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot(),
-    ToastrModule.forRoot(),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
-}) 
+})
 export class AppModule { }
