@@ -5,3 +5,11 @@
 <button class="btn btn-primary me-2" (click)="get400ValidationError()">
   400 Validate Error
 </button>
+
+<div class="row mt-5" *ngIf="validationErrors.length > 0">
+  <ul>
+    <li *ngFor="let err of validationErrors">
+      {{err}}
+    </li>
+  </ul>
+</div>

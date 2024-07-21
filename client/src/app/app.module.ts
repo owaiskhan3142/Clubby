@@ -17,6 +17,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_module/shared.module';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
     MemberDetailComponent,
     ListsComponent,
     MessagesComponent,
-    TestErrorComponent
+    TestErrorComponent,
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   imports: [
     BrowserModule,
