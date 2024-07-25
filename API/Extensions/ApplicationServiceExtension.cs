@@ -1,7 +1,6 @@
 using API.Data;
 using API.Interfaces;
 using API.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Extensions
@@ -16,7 +15,7 @@ namespace API.Extensions
             });
             services.AddCors();
             services.AddScoped<ITokenService, TokenService>();
-            
+
             return services;
         }
 
